@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        Logo
+        <a href="/">
+            <img class="header-logo" src="./images/Logo.svg" alt="Logo">
+        </a>
     </header>
 
     <main>
@@ -20,11 +22,36 @@
 
                 <div class="form-rating">
                     <div class="form-rating__title">Rate your experience</div>
-                    <div class="form-rating__stars">STARS</div>
+                    <div class="form-rating__stars">
+                        <ul class="form-rating__list">
+                            <li class="form-rating__item">
+                                <div class="star-full"></div>
+                            </li>
+                            <li class="form-rating__item">
+                                <div class="star-full"></div>
+                            </li>
+                            <li class="form-rating__item">
+                                <div class="star-full"></div>
+                            </li>
+                            <li class="form-rating__item">
+                                <div class="star-full"></div>
+                            </li>
+                            <li class="form-rating__item">
+                                <div class="star-empty"></div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="form-textarea">
-                    <div class="form-textarea__bread-crumbs">Comment/Complaint/Feedback:</div>
+                    <div class="form-textarea__bread-crumbs">
+<!--                        <ul>-->
+<!--                            <li>Comment/</li>-->
+<!--                            <li>Complaint/</li>-->
+<!--                            <li>Feedback:</li>-->
+<!--                        </ul>-->
+                        Comment/Complaint/Feedback:
+                    </div>
                     <textarea rows="10" cols="45" name="text"></textarea>
                 </div>
 

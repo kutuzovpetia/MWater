@@ -1,4 +1,5 @@
 @import "~normalize.css";
+@import "colors.scss";
 //@import "../assets/fonts/fonts.scss";
 
 
@@ -37,6 +38,11 @@ ul{
 
 header{
   border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  .header-logo{
+    padding-top: 32px;
+  }
 }
 
 footer{
@@ -47,11 +53,57 @@ footer{
   .form{
     border: 2px solid yellow;
 
-    .form-textarea{
-      textarea{
-        width: 100%;
+    .form-rating{
+
+      .form-rating__title{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 44px;
+        color: $black;
       }
+      .form-rating__stars{
+
+        .form-rating__list{
+
+          .form-rating__item{
+            width: 33px;
+            height: 33px;
+
+            @mixin star{
+              width: 100%;
+              height: 100%;
+              background-repeat: no-repeat;
+            }
+            .star-full{
+              @include star;
+              background-image: url("../assets/images/icon/star.svg");
+            }
+            .star-empty{
+              @include star;
+              background-image: url("../assets/images/icon/star-empty.svg");
+            }
+          }
+        }
+      }
+
+      .form-textarea{
+
+        .form-textarea__bread-crumbs{
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 16px;
+          color: $labelColor;
+        }
+        textarea{
+          width: 100%;
+          height: 120px;
+        }
+      }
+
+
+
     }
+
   }
 
 }

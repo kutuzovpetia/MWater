@@ -60,12 +60,11 @@ module.exports = {
         // clear dist
         new CleanWebpackPlugin(),
         // Copy files
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         { from: path.resolve(__dirname, 'src/assets/images/cards-img'), to: path.resolve(__dirname, 'dist/images')},
-        //         { from: path.resolve(__dirname, 'src/assets/images/markers'), to: path.resolve(__dirname, 'dist/images')},
-        //     ]
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist/images')},
+            ]
+        }),
         new MiniCssExtractPlugin({
             filename: filename('css')
         })
