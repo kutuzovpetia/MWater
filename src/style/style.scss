@@ -1,0 +1,78 @@
+@import "~normalize.css";
+//@import "../assets/fonts/fonts.scss";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container{
+  width: 722px;
+  margin: 0 auto;
+  border: 2px solid red;
+  font-family: "DBAdmanX";
+  @media screen and (max-width: 722px){
+    width: 100%;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header{
+  border: 2px solid blue;
+}
+
+footer{
+  border: 2px solid green;
+}
+
+.container{
+  .form{
+    border: 2px solid yellow;
+
+    .form-textarea{
+      textarea{
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.footer-info{
+
+  div{
+    border: 1px solid red;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
