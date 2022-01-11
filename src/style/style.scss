@@ -144,7 +144,7 @@ header{
       .form-contact__title{
         display: flex;
         align-items: center;
-        margin: 0 0 48px 0;
+        //margin: 0 0 48px 0;
         h1{
           color: $blue;
           font-size: 28px;
@@ -153,25 +153,34 @@ header{
           margin-left: 16px;
         }
       }
-      .label{
-        font-size: 20px;
-        color: black;
-        font-weight: 400;
-        line-height: 16px;
-        display: block;
-        margin: 24px 0 0 0;
+
+      .form-contact__inputs{
+        height: 0;
+        overflow: hidden;
+        .label{
+          font-size: 20px;
+          color: black;
+          font-weight: 400;
+          line-height: 16px;
+          display: block;
+          margin: 24px 0 0 0;
+        }
+        input[type="text"], input[type="number"]{
+          width: 100%;
+          background-color: white;
+          border: 1px solid #ECECEC;
+          border-radius: 8px;
+          height: 56px;
+          margin: 10px 0 0 0;
+          font-size: 20px;
+          font-weight: 400;
+          color: $black;
+          padding: 18px 16px;
+        }
       }
-      input[type="text"], input[type="number"]{
-        width: 100%;
-        background-color: white;
-        border: 1px solid #ECECEC;
-        border-radius: 8px;
-        height: 56px;
-        margin: 10px 0 0 0;
-        font-size: 20px;
-        font-weight: 400;
-        color: $black;
-        padding: 18px 16px;
+
+      .active{
+        height: auto;
       }
 
       /* Chrome, Safari, Edge, Opera */
