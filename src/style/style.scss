@@ -1,6 +1,7 @@
 @import "~normalize.css";
 @import "colors.scss";
-//@import "../assets/fonts/fonts.scss";
+@import "fonts";
+@import "./checkBoxStyle.scss";
 
 
 html {
@@ -10,8 +11,8 @@ html {
 .container{
   width: 722px;
   margin: 0 auto;
-  border: 2px solid red;
-  font-family: "DBAdmanX";
+  //border: 2px solid red;
+  font-family: "DBAdmanX", sans-serif;
   @media screen and (max-width: 722px){
     width: 100%;
   }
@@ -36,8 +37,20 @@ ul{
   margin: 0;
 }
 
+.decoration{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  .decor1{
+    width: 100%;
+  }
+}
+
 header{
-  border: 2px solid blue;
+  //border: 2px solid blue;
   display: flex;
   justify-content: center;
   .header-logo{
@@ -45,29 +58,37 @@ header{
   }
 }
 
-footer{
-  border: 2px solid green;
-}
+//footer{
+//  border: 2px solid green;
+//}
 
 .container{
   .form{
-    border: 2px solid yellow;
+    //border: 2px solid yellow;
 
     .form-rating{
-
+      margin: 80px 0 0 0;
       .form-rating__title{
         font-weight: 700;
         font-size: 40px;
         line-height: 44px;
         color: $black;
+        text-align: center;
+        @media screen and (max-width: 320px) {
+          font-size: 32px;
+        }
       }
       .form-rating__stars{
-
+        margin: 40px 0 0 0;
         .form-rating__list{
+          display: flex;
+          width: fit-content;
+          margin: 0 auto;
 
           .form-rating__item{
             width: 33px;
             height: 33px;
+            margin: 0 10px;
 
             @mixin star{
               width: 100%;
@@ -76,45 +97,206 @@ footer{
             }
             .star-full{
               @include star;
-              background-image: url("../assets/images/icon/star.svg");
+              background-image: url("../assets/images/icons/star.svg");
             }
             .star-empty{
               @include star;
-              background-image: url("../assets/images/icon/star-empty.svg");
+              background-image: url("../assets/images/icons/star-empty.svg");
             }
           }
         }
       }
+    }
 
-      .form-textarea{
 
-        .form-textarea__bread-crumbs{
-          font-weight: 400;
-          font-size: 20px;
-          line-height: 16px;
-          color: $labelColor;
-        }
-        textarea{
-          width: 100%;
-          height: 120px;
+    .form-textarea{
+      margin: 55px 0 0 0;
+      .form-textarea__bread-crumbs{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 16px;
+        padding-bottom: 10px;
+        color: $labelColor;
+      }
+      textarea{
+        width: 100%;
+        height: 120px;
+        background-color: $milk;
+        resize: none;
+        border: 1px solid #ECECEC;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 400;
+        color: $black;
+        padding: 18px 16px;
+      }
+    }
+
+    .form-contact{
+      margin: 48px 0 0 0;
+      padding: 36px;
+      background-color: $blueLight;
+      border-radius: 8px;
+      .form-contact__title{
+        display: flex;
+        align-items: center;
+        margin: 0 0 48px 0;
+        h1{
+          color: $blue;
+          font-size: 28px;
+          line-height: 24px;
+          font-weight: 700;
+          margin-left: 16px;
         }
       }
+      .label{
+        font-size: 20px;
+        color: black;
+        font-weight: 400;
+        line-height: 16px;
+        display: block;
+        margin: 24px 0 0 0;
+      }
+      input[type="text"], input[type="number"]{
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ECECEC;
+        border-radius: 8px;
+        height: 56px;
+        margin: 10px 0 0 0;
+        font-size: 20px;
+        font-weight: 400;
+        color: $black;
+        padding: 18px 16px;
+      }
 
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
 
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
 
+    .form-button__submit{
+      display: block;
+      margin: 64px auto 0 auto;
+      border: none;
+      text-transform: uppercase;
+      background-color: $blue;
+      min-width: 300px;
+      height: 48px;
+      color: white;
+      border-radius: 4px;
+    }
+  }
+
+}
+
+footer{
+  font-family: 'DBAdmanX', sans-serif;
+
+  .footer-info{
+    display: flex;
+    justify-content: center;
+
+    .footer-info__info{
+      margin-top: 60px;
+      padding: 0 25px;
+    }
+
+    //div{
+    //  border: 1px solid red;
+    //}
+
+    @mixin footerText{
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 400;
+      color: $black;
+      text-decoration: underline;
+      position: relative;
+
+    }
+
+    @mixin footerSubText{
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      color: $gray;
+      position: absolute;
+      text-transform: uppercase;
+
+    }
+
+    .footer-info__number{
+      padding: 0 25px;
+      margin-top: 50px;
+      .number{
+        @include footerText;
+        &:before{
+          content: url("../assets/images/icons/phone.svg");
+          margin-right: 15px;
+        }
+        &:after{
+          @include footerSubText;
+          content: "Call center";
+          left: 32px;
+          top: 40px;
+        }
+      }
+    }
+
+    .footer-info__email{
+      padding: 0 25px;
+      margin-top: 50px;
+      @include footerText;
+      .email{
+        &:before{
+          content: url("../assets/images/icons/mail.svg");
+          margin-right: 15px;
+        }
+        &:after{
+          @include footerSubText;
+          content: "Email";
+          left: 60px;
+          top: 40px;
+        }
+      }
+    }
+
+    .footer-info__line{
+      padding: 0 25px;
+      margin-top: 50px;
+      @include footerText;
+      .line{
+        &:before{
+          content: url("../assets/images/icons/line.svg");
+          margin-right: 15px;
+        }
+        &:after{
+          @include footerSubText;
+          content: "Line";
+          left: 60px;
+          top: 40px;
+        }
+      }
     }
 
   }
 
-}
-
-.footer-info{
-
-  div{
-    border: 1px solid red;
+  .footer-copywriter{
+    margin: 50px 0 24px 0;
+    text-align: center;
+    text-transform: uppercase;
   }
-
 }
+
 
 
 

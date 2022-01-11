@@ -28,7 +28,7 @@ const filename = ext => isDev ? `[name].${ext}`:`[name].[hash].${ext}`
 
 console.log(path.resolve(__dirname, 'src'))
 
-//Конфигурация webpack
+//Configure webpack
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -50,14 +50,14 @@ module.exports = {
         host: '0.0.0.0',
     },
     plugins:[
-        // html
+        // Html
         new HTMLWebpackPlugin({
             template: './index.html',
             minify:{
                 collapseWhitespace: !isDev
             }
         }),
-        // clear dist
+        // Clear dist
         new CleanWebpackPlugin(),
         // Copy files
         new CopyWebpackPlugin({

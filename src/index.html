@@ -9,17 +9,21 @@
     <title>MWater</title>
 </head>
 <body>
+
+    <div class="decoration">
+        <img class="decor1" src="images/decor1.svg" alt="decor">
+    </div>
+
     <header>
         <a href="/">
             <img class="header-logo" src="./images/Logo.svg" alt="Logo">
         </a>
     </header>
 
-    <main>
+    <main class="main">
 
         <div class="container">
             <form class="form" action="/" method="post">
-
                 <div class="form-rating">
                     <div class="form-rating__title">Rate your experience</div>
                     <div class="form-rating__stars">
@@ -58,23 +62,27 @@
                 <div class="form-contact">
 
                     <div class="form-contact__title">
-                        <input type="checkbox">
+                        <div class="checkbox">
+                            <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+                            <label for="color-1"></label>
+                        </div>
+
                         <h1>I want Sprinkle staff to contact me back</h1>
                     </div>
 
-                    <label for="contactName">Contact name</label>
+                    <label class="label" for="contactName">Contact name</label>
                     <input id="contactName" type="text">
 
-                    <label for="mobileNumber">Mobile No.</label>
+                    <label class="label" for="mobileNumber">Mobile No.</label>
                     <input id="mobileNumber" type="number">
 
-                    <label for="email">E-mail</label>
+                    <label class="label" for="email">E-mail</label>
                     <input id="email" type="text">
 
                 </div>
 
 
-                <button type="submit"></button>
+                <button class="form-button__submit" type="submit">Confirm</button>
             </form>
         </div>
 
@@ -84,7 +92,7 @@
 
         <div class="footer-info">
 
-            <div>For inquiries:</div>
+            <div class="footer-info__info">For inquiries:</div>
 
             <div class="footer-info__number">
                 <div class="number">02-712-7272</div>
@@ -95,7 +103,7 @@
             </div>
 
             <div class="footer-info__line">
-                <div class="email">@sprinklewater</div>
+                <div class="line">@sprinklewater</div>
             </div>
 
         </div>
