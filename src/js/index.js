@@ -7,12 +7,10 @@ class FormLogic{
         this.ratingStars = [...document.querySelectorAll('.form-rating__item > div')];
         this.checkBox = document.querySelector('.custom-checkbox');
         this.inputsWrapper = document.querySelector('.form-contact__inputs');
-
         this.inputContactName = document.getElementById('contactName');
         this.inputMobileNumber = document.getElementById('mobileNumber');
         this.inputEmail = document.getElementById('email');
         this.textArea = document.getElementById('textArea');
-
         this.buttonSubmit = document.querySelector('.form-button__submit');
 
         this.submitInfo = {
@@ -36,7 +34,6 @@ class FormLogic{
 
             star.onclick = () => {
                 i = stars.indexOf(star);
-                console.log(i+1)
                 this.submitInfo.rating = i + 1;
                 if(star.className === starClassInactive)
                     for(i; i >= 0; --i) stars[i].className = starClassActive;
@@ -88,7 +85,7 @@ class FormLogic{
     submit(){
         this.buttonSubmit.addEventListener('click', (e)=>{
 
-            if(!this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile){
+            if(this.checkBox && (!this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile)){
                 !this.validateEmail(this.submitInfo.email) ? this.inputEmail.classList.add('error') : this.inputEmail.classList.remove('error')
                 e.preventDefault();
             }
