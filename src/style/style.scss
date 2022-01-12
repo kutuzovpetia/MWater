@@ -13,6 +13,7 @@ html {
   margin: 0 auto;
   //border: 2px solid red;
   font-family: "DBAdmanX", sans-serif;
+  padding: 0 20px;
   @media screen and (max-width: 722px){
     width: 100%;
   }
@@ -37,17 +38,13 @@ ul{
   margin: 0;
 }
 
-.decoration{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  .decor1{
-    width: 100%;
-  }
+body{
+  background-image: url("../assets/images/bg2.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
+
 
 header{
   //border: 2px solid blue;
@@ -55,6 +52,10 @@ header{
   justify-content: center;
   .header-logo{
     padding-top: 32px;
+    @media screen and (max-width: 320px) {
+      padding-top: 24px;
+      width: 74px;
+    }
   }
 }
 
@@ -68,12 +69,20 @@ header{
 
     .form-rating{
       margin: 80px 0 0 0;
+      @media screen and (max-width: 768px){
+        margin: 48px 0 0 0;
+      }
+      @media screen and (max-width: 320px){
+        margin: 24px 0 0 0;
+      }
       .form-rating__title{
-        font-weight: 700;
+        font-family: DBAdmanX;
+        font-weight: bold;
         font-size: 40px;
         line-height: 44px;
         color: $black;
         text-align: center;
+        letter-spacing: 2px;
         @media screen and (max-width: 320px) {
           font-size: 32px;
         }
@@ -115,6 +124,9 @@ header{
 
     .form-textarea{
       margin: 55px 0 0 0;
+      @media screen and (max-width: 768px) {
+        margin: 42px 0 0 0;
+      }
       .form-textarea__bread-crumbs{
         font-weight: 400;
         font-size: 20px;
@@ -141,6 +153,12 @@ header{
       padding: 36px;
       background-color: $blueLight;
       border-radius: 8px;
+      @media screen and (max-width: 768px){
+        margin: 32px 0 0 0;
+      }
+      @media screen and (max-width: 320px){
+        padding: 16px;
+      }
       .form-contact__title{
         display: flex;
         align-items: center;
@@ -151,6 +169,12 @@ header{
           line-height: 24px;
           font-weight: 700;
           margin-left: 16px;
+          letter-spacing: 1px;
+          @media screen and (max-width: 320px){
+            font-size: 16px;
+            letter-spacing: 0;
+            margin-left: 13px;
+          }
         }
       }
 
@@ -177,6 +201,10 @@ header{
           color: $black;
           padding: 18px 16px;
         }
+
+        .error{
+          border: 1px solid red!important;
+        }
       }
 
       .active{
@@ -198,14 +226,25 @@ header{
 
     .form-button__submit{
       display: block;
-      margin: 64px auto 0 auto;
+      margin: 48px auto 0 auto;
       border: none;
       text-transform: uppercase;
       background-color: $blue;
       min-width: 300px;
-      height: 48px;
       color: white;
       border-radius: 4px;
+      font-size: 24px;
+      padding: 16px 24px;
+      letter-spacing: 1px;
+      @media screen and (max-width: 768px){
+        margin: 32px auto 0 auto;
+        min-width: 144px;
+        padding: 10px 16px;
+      }
+      @media screen and (max-width: 320px){
+        font-size: 16px;
+      }
+
     }
   }
 
@@ -213,14 +252,29 @@ header{
 
 footer{
   font-family: 'DBAdmanX', sans-serif;
+  border-top: 1px solid $grayLight;
+  margin-top: 80px;
+  @media screen and (max-width: 320px) {
+    margin-top: 48px;
+  }
 
   .footer-info{
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 676px) {
+      flex-direction: column;
+    }
 
     .footer-info__info{
       margin-top: 60px;
       padding: 0 25px;
+      @media screen and (max-width: 676px) {
+        text-align: center;
+      }
+      @media screen and (max-width: 320px) {
+        margin-top: 35px;
+        font-size: 13px;
+      }
     }
 
     //div{
@@ -234,7 +288,10 @@ footer{
       color: $black;
       text-decoration: underline;
       position: relative;
-
+      white-space: nowrap;
+      @media screen and (max-width: 320px){
+        font-size: 14px;
+      }
     }
 
     @mixin footerSubText{
@@ -244,59 +301,66 @@ footer{
       color: $gray;
       position: absolute;
       text-transform: uppercase;
-
+      @media screen and (max-width: 320px){
+        font-size: 11px;
+      }
     }
 
-    .footer-info__number{
-      padding: 0 25px;
-      margin-top: 50px;
-      .number{
+    .footer-info__wrapper{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .footer-info__number{
+        padding: 0 25px;
+        margin-top: 50px;
+        .number{
+          @include footerText;
+          &:before{
+            content: url("../assets/images/icons/phone.svg");
+            margin-right: 15px;
+          }
+          &:after{
+            @include footerSubText;
+            content: "Call center";
+            left: 32px;
+            top: 40px;
+          }
+        }
+      }
+
+      .footer-info__email{
+        padding: 0 25px;
+        margin-top: 50px;
         @include footerText;
-        &:before{
-          content: url("../assets/images/icons/phone.svg");
-          margin-right: 15px;
-        }
-        &:after{
-          @include footerSubText;
-          content: "Call center";
-          left: 32px;
-          top: 40px;
-        }
-      }
-    }
-
-    .footer-info__email{
-      padding: 0 25px;
-      margin-top: 50px;
-      @include footerText;
-      .email{
-        &:before{
-          content: url("../assets/images/icons/mail.svg");
-          margin-right: 15px;
-        }
-        &:after{
-          @include footerSubText;
-          content: "Email";
-          left: 60px;
-          top: 40px;
+        .email{
+          &:before{
+            content: url("../assets/images/icons/mail.svg");
+            margin-right: 15px;
+          }
+          &:after{
+            @include footerSubText;
+            content: "Email";
+            left: 60px;
+            top: 40px;
+          }
         }
       }
-    }
 
-    .footer-info__line{
-      padding: 0 25px;
-      margin-top: 50px;
-      @include footerText;
-      .line{
-        &:before{
-          content: url("../assets/images/icons/line.svg");
-          margin-right: 15px;
-        }
-        &:after{
-          @include footerSubText;
-          content: "Line";
-          left: 60px;
-          top: 40px;
+      .footer-info__line{
+        padding: 0 25px;
+        margin-top: 50px;
+        @include footerText;
+        .line{
+          &:before{
+            content: url("../assets/images/icons/line.svg");
+            margin-right: 15px;
+          }
+          &:after{
+            @include footerSubText;
+            content: "Line";
+            left: 60px;
+            top: 40px;
+          }
         }
       }
     }
@@ -304,11 +368,13 @@ footer{
   }
 
   .footer-copywriter{
-    margin: 50px 0 24px 0;
+    margin: 65px 0 24px 0;
     text-align: center;
     text-transform: uppercase;
+    font-size: 12px;
   }
 }
+
 
 
 

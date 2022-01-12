@@ -80,24 +80,21 @@ class FormLogic{
             { input: this.inputMobileNumber, cb: mobile },
             { input: this.textArea, cb: feedback },
             { input: this.inputEmail, cb: email },
-
         ]
 
-        this.addListeners('keyup', elems)
+        this.addListeners('keyup', elems);
     }
 
     submit(){
         this.buttonSubmit.addEventListener('click', (e)=>{
-            e.preventDefault();
 
-
-            if(this.checkBox.checked || !this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile){
-                alert('!!!')
+            if(!this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile){
+                !this.validateEmail(this.submitInfo.email) ? this.inputEmail.classList.add('error') : this.inputEmail.classList.remove('error')
+                e.preventDefault();
             }
             else{
                 console.log(this.submitInfo)
             }
-
         })
     }
 
