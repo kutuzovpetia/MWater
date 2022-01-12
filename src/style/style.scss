@@ -41,7 +41,7 @@ ul{
 body{
   background-image: url("../assets/images/bg2.svg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
 }
 
 
@@ -66,6 +66,7 @@ header{
 .container{
   .form{
     //border: 2px solid yellow;
+    padding-bottom: 80px;
 
     .form-rating{
       margin: 80px 0 0 0;
@@ -253,7 +254,10 @@ header{
 footer{
   font-family: 'DBAdmanX', sans-serif;
   border-top: 1px solid $grayLight;
-  margin-top: 80px;
+  //margin-top: 80px;
+  position: absolute;
+  left: 0;
+  right: 0;
   @media screen and (max-width: 320px) {
     margin-top: 48px;
   }
