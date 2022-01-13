@@ -54,14 +54,14 @@ class FormLogic{
     }
 
     eventCheckBox(){
-        this.checkBox.addEventListener('change',  ()=>{
+        this.checkBox?.addEventListener('change',  ()=>{
             this.checkBoxToggle(this.checkBox.checked)
         })
     }
 
     addListeners(event, elements){
         elements.forEach(item=>{
-            item.input.addEventListener(event, (e)=>item.cb(e));
+            item.input?.addEventListener(event, (e)=>item.cb(e));
         })
     }
 
@@ -83,7 +83,7 @@ class FormLogic{
     }
 
     submit(){
-        this.buttonSubmit.addEventListener('click', (e)=>{
+        this.buttonSubmit?.addEventListener('click', (e)=>{
 
             if(!this.checkBox.checked){
                 console.log(this.submitInfo)
@@ -106,7 +106,6 @@ class FormLogic{
         this.submit();
     }
 }
-
 
 window.addEventListener('DOMContentLoaded', ()=>{
 

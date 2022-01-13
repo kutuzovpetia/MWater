@@ -2,6 +2,7 @@
 @import "colors.scss";
 @import "fonts";
 @import "./checkBoxStyle.scss";
+@import "./success.scss";
 
 
 html {
@@ -280,10 +281,6 @@ footer{
         font-size: 13px;
       }
     }
-
-    //div{
-    //  border: 1px solid red;
-    //}
 
     @mixin footerText{
       font-size: 20px;
