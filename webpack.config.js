@@ -73,7 +73,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist/images')},
-                // { from: path.resolve(__dirname, 'src/success.html'), to: path.resolve(__dirname, 'dist')},
             ]
         }),
         new MiniCssExtractPlugin({

@@ -32,13 +32,23 @@ class FormLogic{
 
         stars.map((star) => {
 
+            star.onmouseover = () => {
+                i = stars.indexOf(star);
+                if(star.className === starClassInactive && !this.submitInfo.rating)
+                    for(i; i >= 0; --i) stars[i].className = starClassActive;
+            }
+
+            star.onmouseleave = () => {
+                if(!this.submitInfo.rating){
+                    for(let i = 0; i < starsLength; i++) stars[i].className = starClassInactive
+                }
+            }
+
             star.onclick = () => {
                 i = stars.indexOf(star);
                 this.submitInfo.rating = i + 1;
                 if(star.className === starClassInactive)
                     for(i; i >= 0; --i) stars[i].className = starClassActive;
-                else
-                    for(i; i < starsLength; ++i) stars[i].className = starClassInactive
             };
         });
     }
