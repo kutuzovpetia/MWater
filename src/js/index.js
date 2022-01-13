@@ -85,12 +85,16 @@ class FormLogic{
     submit(){
         this.buttonSubmit.addEventListener('click', (e)=>{
 
-            if(this.checkBox && (!this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile)){
-                !this.validateEmail(this.submitInfo.email) ? this.inputEmail.classList.add('error') : this.inputEmail.classList.remove('error')
-                e.preventDefault();
-            }
-            else{
+            if(!this.checkBox.checked){
                 console.log(this.submitInfo)
+            }
+            else if(this.checkBox.checked && (!this.validateEmail(this.submitInfo.email) || !this.submitInfo.contactName || !this.submitInfo.mobile)){
+
+                !this.validateEmail(this.submitInfo.email) ? this.inputEmail.classList.add('error') : this.inputEmail.classList.remove('error');
+                !this.submitInfo.mobile ? this.inputMobileNumber.classList.add('error') : this.inputMobileNumber.classList.remove('error');
+                !this.submitInfo.contactName ? this.inputContactName.classList.add('error') : this.inputContactName.classList.remove('error');
+
+                e.preventDefault();
             }
         })
     }
